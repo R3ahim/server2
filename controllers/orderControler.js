@@ -297,10 +297,23 @@ try {
 
 }
 
+const updateOrderStatus = async (req,res)=>{
+try {
+  await orderModel.findByIdAndUpdate(req.body.orderId,orStatus:true);
+  res.json({success:true,message:"status Updated"})
+
+} catch (error) {
+  console.log(error);
+  res.json({success:false,message:'error'})
+  
+  
+}
+
+}
 // Export the other functions...
 
 
 
-export {placeOrder,verifyOrder,userOrders,listOrders,updateStatus};
+export {placeOrder,verifyOrder,userOrders,listOrders,updateStatus,updateOrderStatus};
 
 
