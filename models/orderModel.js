@@ -9,7 +9,8 @@ const orderSchema = new mongoose.Schema({
      date:{type:Date,default:Date.now()},
      payment:{type:Boolean,default:false},
      paymentImple:{type:String,required:false},
-     method:{type:String,required:false}
+     method:{type:String,required:false},
+    orStatus:{type:Boolean,default:false}
 })
 
 
