@@ -10,7 +10,7 @@ const orderSchema = new mongoose.Schema({
      payment:{type:Boolean,default:false},
      paymentImple:{type:String,required:false},
      method:{type:String,required:false},
-    orStatus:{type:Boolean,default:false}
+    orStatus:{type:Object,default:"false"}
 })
 
 
