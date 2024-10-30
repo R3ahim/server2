@@ -298,8 +298,9 @@ try {
 }
 
 const updateOrderStatus = async (req,res)=>{
+    const ordeser = req.body.orStatus
 try {
-  await orderModel.findByIdAndUpdate(req.body.orderId,orStatus:req.body.orStatus);
+  await orderModel.findByIdAndUpdate(req.body.orderId,orStatus:ordeser);
   res.json({success:true,message:"status Updated"})
 
 } catch (error) {
