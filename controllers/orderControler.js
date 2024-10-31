@@ -165,7 +165,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 // Placing user order for frontend
 const placeOrder = async (req, res) => {
-  const frontend_url = 'http://localhost:5173';
+  const frontend_url = 'http://deltakebab.com';
   const paymentMethod = req.body.method;
   const PaymentImplement = req.body.paymentImple;
   const totalExraSuace = req.body.totalExraSuace;
@@ -197,9 +197,9 @@ const placeOrder = async (req, res) => {
         // unit_amount: item.extra.reduce((acc, item) => acc + item.price * item.quanity, 0) * 100
         //   + item.extraSauce.reduce((acc, item) => acc + item.price * item.quanity, 0) * 100
         //   + item.sizePrice * 100,
-        unit_amount :item.sizePrice 
+        unit_amount : item.sizePrice * 100 + totalExraSuace * 100 + TotalExtras * 100,
       },
-      quantity: item.sizePrice * 100 + totalExraSuace * 100 + TotalExtras * 100,
+       quantity:item.quantity,
     }));
 
     line_items.push({
